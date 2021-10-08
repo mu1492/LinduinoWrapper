@@ -1,7 +1,7 @@
 /*
 WireWrapper.h
 
-This file contains the definitions for the the Arduino-to-Linux Wire wrapper.
+This file contains the definitions for the Arduino-to-Linux Wire wrapper.
 
 
 Copyright (c) 2021, Mihai Ursu

@@ -1,7 +1,7 @@
 /*
 SpiWrapper.cpp
 
-This file contains the sources for the the Arduino-to-Linux SPI wrapper.
+This file contains the sources for the Arduino-to-Linux SPI wrapper.
 
 
 Copyright (c) 2021, Mihai Ursu

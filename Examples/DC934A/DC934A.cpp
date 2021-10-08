@@ -114,7 +114,7 @@ int main()
         //**********************
         // GPIO
         //**********************
-        de10->setLtcGpioDirection(De10Nano::DIO_DIRECTION_OUTPUT);
+        de10->setLtcGpioDirection( De10Nano::DIO_DIRECTION_OUTPUT );
         de10->setLtcGpioStatus( De10Nano::DIO_STATUS_HIGH );
 
         //**********************
