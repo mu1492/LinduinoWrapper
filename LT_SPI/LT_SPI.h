@@ -55,7 +55,7 @@ void quikeval_SPI_apply_settings
 
 void quikeval_SPI_connect();
 
-void quikeval_SPI_init();
+bool quikeval_SPI_init();
 
 void spi_enable
     (

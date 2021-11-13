@@ -89,9 +89,9 @@ void SpiWrapper::setBus
 //!************************************************************************
 //! Start the communication over the SPI bus and apply settings
 //!
-//! @returns: nothing
+//! @returns: true if could connect to SPI
 //!************************************************************************
-void SpiWrapper::begin()
+bool SpiWrapper::begin()
 {
     mSpiConnected = false;
     mSpiFile = -1;
@@ -108,6 +108,8 @@ void SpiWrapper::begin()
     {
         printf( "\n Could not start a connection with SPI." );
     }
+
+    return mSpiConnected;
 }
 
 

@@ -162,7 +162,7 @@ class SpiWrapper
             );
 
 
-        void begin();
+        bool begin();
 
         void end();
 

@@ -127,7 +127,7 @@ std::string De10Nano::getSpiString
     switch( aSpi )
     {
         case SPI_0:
-            spiString = "/dev/spidev32766.0";
+            spiString = "/dev/spidev0.0";
             break;
 
         default:

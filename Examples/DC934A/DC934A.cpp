@@ -130,12 +130,7 @@ int main()
         // datasheet: fESCK < 2000 kHz
         SPISettings spiSettings = SPISettings( 1000000, MSBFIRST, SPI_MODE0 );
         quikeval_SPI_apply_settings( spiSettings );
-        quikeval_SPI_init();
-
-        //**********************
-        // Print title message
-        //**********************
-        printTitle();
+        bool spiInit = quikeval_SPI_init();
 
         char expectedBoardName[] = "DC934";
         DemoBoardType detectedBoard;
@@ -145,8 +140,11 @@ int main()
         {
             printf( "\nCould not find a %s board connected", expectedBoardName );
         }
-        else
+
+        if( spiInit && dc934Connected )
         {
+            printTitle();
+
             printf( "\nConnected to %s", detectedBoard.demoCircuitNumber );
 
             if( detectedBoard.demoCircuitOption )
@@ -289,6 +287,7 @@ char getche()
 //!************************************************************************
 void printTitle()
 {
+    printf( "\n" );
     printf( "*****************************************************************\n" );
     printf( "* DC934A Demonstration Program                                  *\n" );
     printf( "*                                                               *\n" );

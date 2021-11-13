@@ -75,10 +75,11 @@ void quikeval_SPI_connect()
 //!************************************************************************
 //! Initialize SPI. Must be called before using the other SPI routines.
 //!
-//! @returns: nothing
+//! @returns: true if SPI is initialized
 //!************************************************************************
-void quikeval_SPI_init()
+bool quikeval_SPI_init()
 {
+    bool isConnected( false );
     De10Nano* de10 = De10Nano::getInstance();
 
     if( de10 )
@@ -88,9 +89,15 @@ void quikeval_SPI_init()
         // the following call must precede begin()
         SPI.setBus( spiBusString );
 
-        SPI.begin();
-        SPI.beginTransaction( spiSettings );
+        isConnected = SPI.begin();
+
+        if( isConnected )
+        {
+            SPI.beginTransaction( spiSettings );
+        }
     }
+
+    return isConnected;
 }
 
 
